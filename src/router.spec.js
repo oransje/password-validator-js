@@ -22,17 +22,15 @@ describe('/', () => {
         expect(response.status).toBe(202);
       });
     });
-
   
-  describe('with invalid password', async () => {
-    it('responds 400 bad request', async () => {
-      const response = await request(app.callback()).post('/password-validator').send({ password: 'short' });
+    describe('with invalid password', async () => {
+      it('responds 400 bad request', async () => {
+        const response = await request(app.callback()).post('/password-validator').send({ password: 'short' });
 
-      expect(response.status).toBe(400);
-      expect(response.body.errors).not.toBeNull();
+        expect(response.status).toBe(400);
+        expect(response.body.errors).not.toBeNull();
+      });
     });
-  });
-
   });
 
   it('responds with 404 for unknown routes', async () => {

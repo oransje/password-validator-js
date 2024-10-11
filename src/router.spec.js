@@ -24,14 +24,14 @@ describe('/', () => {
     });
 
   
-    describe('with invalid password', async () => {
-      it('responds 400 bad request', async () => {
-        const response = await request(app.callback()).post('/password-validator').send({ password: 'short' });
-  
-        expect(response.status).toBe(400);
-        expect(response.body.errors).not.toBeNull();
-      });
+  describe('with invalid password', async () => {
+    it('responds 400 bad request', async () => {
+      const response = await request(app.callback()).post('/password-validator').send({ password: 'short' });
+
+      expect(response.status).toBe(400);
+      expect(response.body.errors).not.toBeNull();
     });
+  });
 
   });
 

@@ -8,7 +8,6 @@ app.use(bodyParser());
 app.use(router.routes(app));
 app.use(router.allowedMethods());
 
-
 app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
